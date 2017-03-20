@@ -3,11 +3,16 @@ from django.db import models
 # Create your models here
 
 class Card(models.Model):
-    username=models.CharField(default="wrecodde", 
-max_length=25)
+    title=models.CharField(max_length=45, 
+default="Card Title")
+    address=models.CharField(max_length=75, 
+default="URL or Platform")
+    username=models.CharField(max_length=35, 
+default="UserName")
+    email=models.EmailField()
+    password=models.CharField(max_length=125, 
+default="password")
+    notes=models.TextField(max_length=225, 
+default="put extra notes down here")
+    #type=(available list of card types)
 
-    email=models.EmailField(default="wrecodde@gmail.com")
-    password=models.CharField(default="decodded", 
-max_length=45)
-    def __str__(self):
-        return self.username
