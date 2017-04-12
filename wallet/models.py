@@ -15,4 +15,5 @@ default="password")
     notes=models.TextField(max_length=225, 
 default="put extra notes down here")
     #type=(available list of card types)
-
+    def __str__(self):
+        return self.title+" @ " +self.username
